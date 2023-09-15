@@ -27,8 +27,9 @@ class Pessoa:
                 arquivo,
                 indent=2,
             )
+            return
 
-    def dados_salvos(file):
+    def dados_salvos(file):  # < só serve para ver todos arquivos que estão na base de dados
 
         with open(
             file,
@@ -38,6 +39,8 @@ class Pessoa:
 
             pessoas_salvas = json.load(arquivo)
             print(*pessoas_salvas, sep='\n')
+            print()
+            return
 
 
 p1 = Pessoa('Vitória', 'Romano', 23, 'Nova Iguaçu')
@@ -50,12 +53,23 @@ p5 = Pessoa('Roberto', 'José', 65, 'Amapá')
 Pessoa.salva_dados(
     '.\\jsons\\aula_7_dados.json',
     (
-        p1.__dict__,
-        p2.__dict__,
-        p3.__dict__,
-        p4.__dict__,
-        p5.__dict__,
+        vars(p1),
+        vars(p2),
+        vars(p3),
+        vars(p4),
+        vars(p5),
     ))
 
 
 Pessoa.dados_salvos('.\\jsons\\aula_7_dados.json')
+
+
+with open('.\\jsons\\aula_7_dados.json', 'r', encoding='utf8') as arquivo:
+    pessoas = json.load(arquivo)
+
+
+p6 = Pessoa(pessoas[0]['nome'], pessoas[1]['sobrenome'],
+            pessoas[2]['idade'], pessoas[3]['endereco'])
+
+
+print(vars(p6))
