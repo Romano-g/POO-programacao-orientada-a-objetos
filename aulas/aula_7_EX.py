@@ -14,10 +14,10 @@ class Pessoa:
         self.idade = idade
         self.endereco = endereco
 
-    def salva_dados(*args):
+    def salva_dados(caminho, *args):
 
         with open(
-            '.\\jsons\\aula_7_dados.json',
+            caminho,
             'w',
             encoding='utf8'
         ) as arquivo:
@@ -47,13 +47,15 @@ p4 = Pessoa('Bruna', 'Cerquilho', 18, 'Salvador')
 p5 = Pessoa('Roberto', 'José', 65, 'Amapá')
 
 
-Pessoa.salva_dados((
-    p1.__dict__,
-    p2.__dict__,
-    p3.__dict__,
-    p4.__dict__,
-    p5.__dict__,
-))
+Pessoa.salva_dados(
+    '.\\jsons\\aula_7_dados.json',
+    (
+        p1.__dict__,
+        p2.__dict__,
+        p3.__dict__,
+        p4.__dict__,
+        p5.__dict__,
+    ))
 
 
 Pessoa.dados_salvos('.\\jsons\\aula_7_dados.json')
