@@ -1,11 +1,11 @@
 # PARTE 2
 
 
-from aula_7_EX import Pessoa
+from aula_7_EX import Pessoa, CAMINHO_DADOS
 import json
 
 
-with open('.\\jsons\\aula_7_dados.json', 'r', encoding='utf8') as arquivo:
+with open(CAMINHO_DADOS, 'r', encoding='utf8') as arquivo:
     pessoas = json.load(arquivo)
 
 

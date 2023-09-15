@@ -11,6 +11,9 @@ Faça isso em arquivos separados.
 import json
 
 
+CAMINHO_DADOS = '.\\jsons\\aula_7_dados.json'
+
+
 class Pessoa:
     def __init__(self, nome, sobrenome, idade, endereco):
         self.nome = nome
@@ -45,7 +48,7 @@ p5 = Pessoa('Roberto', 'José', 65, 'Amapá')
 
 if __name__ == '__main__':
     salva_dados(
-        '.\\jsons\\aula_7_dados.json',
+        CAMINHO_DADOS,
         (
             vars(p1),
             vars(p2),
