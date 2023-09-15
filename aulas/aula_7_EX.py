@@ -18,21 +18,22 @@ class Pessoa:
         self.idade = idade
         self.endereco = endereco
 
-    def salva_dados(caminho, *args):
 
-        with open(
-            caminho,
-            'w',
-            encoding='utf8',
-        ) as arquivo:
+def salva_dados(caminho, *args):
 
-            json.dump(
-                *args,
-                arquivo,
-                indent=2,
-                ensure_ascii=False
-            )
-            return
+    with open(
+        caminho,
+        'w',
+        encoding='utf8',
+    ) as arquivo:
+
+        json.dump(
+            *args,
+            arquivo,
+            indent=2,
+            ensure_ascii=False
+        )
+        return
 
 
 p1 = Pessoa('Vitória', 'Romano', 23, 'Nova Iguaçu')
@@ -42,12 +43,13 @@ p4 = Pessoa('Bruna', 'Cerquilho', 18, 'Salvador')
 p5 = Pessoa('Roberto', 'José', 65, 'Amapá')
 
 
-Pessoa.salva_dados(
-    '.\\jsons\\aula_7_dados.json',
-    (
-        vars(p1),
-        vars(p2),
-        vars(p3),
-        vars(p4),
-        vars(p5),
-    ))
+if __name__ == '__main__':
+    salva_dados(
+        '.\\jsons\\aula_7_dados.json',
+        (
+            vars(p1),
+            vars(p2),
+            vars(p3),
+            vars(p4),
+            vars(p5),
+        ))
