@@ -1,4 +1,5 @@
 venv
+aulas/__pycache__/
 aula_1.py
 aula_2.py
 aula_3.py
@@ -8,3 +9,5 @@ aula_6.py
 aula_7_EX2.py
 aula_7_EX3.py
 aula127.json
+aulas/__pycache__/aula_7_EX2.cpython-311.pyc
+aulas/__pycache__/aula_7_EX2.cpython-311.pyc
