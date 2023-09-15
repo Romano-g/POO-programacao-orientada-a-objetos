@@ -4,6 +4,10 @@ Salve os dados da sua classe em JSON e depois
 crie novamente as instâncias da classe com os dados salvos.
 Faça isso em arquivos separados.
 """
+
+# PARTE 1
+
+
 import json
 
 
@@ -19,27 +23,15 @@ class Pessoa:
         with open(
             caminho,
             'w',
-            encoding='utf8'
+            encoding='utf8',
         ) as arquivo:
 
             json.dump(
                 *args,
                 arquivo,
                 indent=2,
+                ensure_ascii=False
             )
-            return
-
-    def dados_salvos(file):  # < só serve para ver todos arquivos que estão na base de dados
-
-        with open(
-            file,
-            'r',
-            encoding='utf8',
-        ) as arquivo:
-
-            pessoas_salvas = json.load(arquivo)
-            print(*pessoas_salvas, sep='\n')
-            print()
             return
 
 
@@ -59,17 +51,3 @@ Pessoa.salva_dados(
         vars(p4),
         vars(p5),
     ))
-
-
-Pessoa.dados_salvos('.\\jsons\\aula_7_dados.json')
-
-
-with open('.\\jsons\\aula_7_dados.json', 'r', encoding='utf8') as arquivo:
-    pessoas = json.load(arquivo)
-
-
-p6 = Pessoa(pessoas[0]['nome'], pessoas[1]['sobrenome'],
-            pessoas[2]['idade'], pessoas[3]['endereco'])
-
-
-print(vars(p6))

@@ -1,15 +1,15 @@
 [
   {
-    "nome": "Vit\u00f3ria",
+    "nome": "Vitória",
     "sobrenome": "Romano",
     "idade": 23,
-    "endereco": "Nova Igua\u00e7u"
+    "endereco": "Nova Iguaçu"
   },
   {
     "nome": "Gustavo",
     "sobrenome": "Mioto",
     "idade": 35,
-    "endereco": "Goi\u00e2nia"
+    "endereco": "Goiânia"
   },
   {
     "nome": "Diego",
@@ -25,8 +25,8 @@
   },
   {
     "nome": "Roberto",
-    "sobrenome": "Jos\u00e9",
+    "sobrenome": "José",
     "idade": 65,
-    "endereco": "Amap\u00e1"
+    "endereco": "Amapá"
   }
 ]
