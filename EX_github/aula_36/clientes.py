@@ -27,7 +27,7 @@ class Person(ABC):
 class Customer(Person):
     def __init__(self) -> None:
         super().__init__()
-        self.accounts = []
+        self.accounts = list[int]
 
     def insertacc(self, *accounts):
         for acc in accounts:
