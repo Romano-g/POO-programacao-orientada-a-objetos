@@ -2,7 +2,7 @@ import contas
 import clientes
 
 
-class Banco:
+class Bank:
     def __init__(
         self,
         agencias: list[int] | None = None,
@@ -64,7 +64,7 @@ if __name__ == '__main__':
     c2.age = 20
     cp1 = contas.SavingAccount(112, 223)
     c2.conta = cp1
-    banco = Banco()
+    banco = Bank()
     banco.clientes.extend([c1, c2])
     banco.contas.extend([cc1, cp1])
     banco.agencias.extend([111, 222])

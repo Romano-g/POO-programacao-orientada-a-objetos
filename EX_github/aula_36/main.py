@@ -1,24 +1,23 @@
-from aulas.aula_36.contas import SavingsAccount, ChekingAccount, Bank, NUBANK
-from clientes import Customer
+import clientes
+import banco_check
+import contas
 
-c = Customer('Caio', 19)
-a = Customer('Arthur', 25)
-p = Customer('Pedro', 21)
 
-c1, c2, c3 = c, a, p
+c1 = clientes.Customer()
+c1.name = 'Luiz'
+c1.age = 30
+cc1 = contas.CheckingAccount(111, 222, 0)
+c1.conta = cc1
+c2 = clientes.Customer()
+c2.name = 'Maria'
+c2.age = 20
+cp1 = contas.SavingAccount(112, 223)
+c2.conta = cp1
+banco = banco_check.Bank()
+banco.clientes.extend([c1, c2])
+banco.contas.extend([cc1, cp1])
+banco.agencias.extend([111, 222])
 
-BANCO_DO_BRASIL = Bank('Banco do Brasil', 2)
-
-NUBANK.customers(c1, c2, c3)
-
-c.addaccount(SavingsAccount('S1'))
-c.addaccount(ChekingAccount('C2'))
-a.addaccount(ChekingAccount('C1'))
-p.addaccount(SavingsAccount('S2'))
-
-NUBANK.accounts(c.account, a.account, p.account)
-NUBANK.show()
-print()
-BANCO_DO_BRASIL.customers(c1, c2, c3)
-BANCO_DO_BRASIL.accounts(c.account, a.account, p.account)
-BANCO_DO_BRASIL.show()
+if banco.autenticar(c1, cc1):
+    cc1.deposit(10)
+    c1.conta.deposit(100)
